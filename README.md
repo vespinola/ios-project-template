@@ -10,7 +10,7 @@ Simple Template to start projects faster.
 ## Running Project
 - Download or clone repository
 - Run **pod install**
-- Open **Jasy.xcworkspace**
+- Open **template-ios.xcworkspace**
 
 ## Author
 
