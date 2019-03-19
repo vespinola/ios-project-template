@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		3467CE7AE7A4DD9AC5E5B6DC /* Pods_template_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB33D7061FE6C53F2669687F /* Pods_template_ios.framework */; };
 		97211A422241649D00E8518C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97211A412241649D00E8518C /* AppDelegate.swift */; };
-		97211A442241649D00E8518C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97211A432241649D00E8518C /* ViewController.swift */; };
+		97211A442241649D00E8518C /* ExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97211A432241649D00E8518C /* ExampleViewController.swift */; };
 		97211A472241649D00E8518C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97211A452241649D00E8518C /* Main.storyboard */; };
 		97211A492241649F00E8518C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97211A482241649F00E8518C /* Assets.xcassets */; };
 		97211A4C2241649F00E8518C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97211A4A2241649F00E8518C /* LaunchScreen.storyboard */; };
@@ -54,13 +54,14 @@
 		972EC059224176A9005E47A1 /* CurrencyFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972EC058224176A9005E47A1 /* CurrencyFormatter.swift */; };
 		979BBA1A2241793400FCB4CC /* avenir-heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 972EC0572241763D005E47A1 /* avenir-heavy.ttf */; };
 		979BBA1B2241793400FCB4CC /* avenir-roman.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 972EC0562241763D005E47A1 /* avenir-roman.ttf */; };
+		979BBA1E22417BAD00FCB4CC /* ExamplePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979BBA1D22417BAD00FCB4CC /* ExamplePresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		6605F5FF0CA559D4C754C488 /* Pods-template-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-template-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-template-ios/Pods-template-ios.release.xcconfig"; sourceTree = "<group>"; };
 		97211A3E2241649D00E8518C /* template-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "template-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		97211A412241649D00E8518C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		97211A432241649D00E8518C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		97211A432241649D00E8518C /* ExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleViewController.swift; sourceTree = "<group>"; };
 		97211A462241649D00E8518C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		97211A482241649F00E8518C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		97211A4B2241649F00E8518C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -107,6 +108,7 @@
 		972EC0572241763D005E47A1 /* avenir-heavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "avenir-heavy.ttf"; sourceTree = "<group>"; };
 		972EC058224176A9005E47A1 /* CurrencyFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyFormatter.swift; sourceTree = "<group>"; };
 		972EC05A22417834005E47A1 /* template-ios-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "template-ios-Bridging-Header.h"; sourceTree = "<group>"; };
+		979BBA1D22417BAD00FCB4CC /* ExamplePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamplePresenter.swift; sourceTree = "<group>"; };
 		C952259E8B412AF4E2923D79 /* Pods-template-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-template-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-template-ios/Pods-template-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		DB33D7061FE6C53F2669687F /* Pods_template_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_template_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -161,12 +163,11 @@
 		97211A402241649D00E8518C /* template-ios */ = {
 			isa = PBXGroup;
 			children = (
+				979BBA1C22417B9200FCB4CC /* Presenter */,
 				972EBFFD22417127005E47A1 /* View */,
 				972EBFF622416C4F005E47A1 /* Service */,
 				972EC023224173B3005E47A1 /* Supporting Files */,
 				97211A412241649D00E8518C /* AppDelegate.swift */,
-				97211A482241649F00E8518C /* Assets.xcassets */,
-				97211A4A2241649F00E8518C /* LaunchScreen.storyboard */,
 				97211A4D2241649F00E8518C /* Info.plist */,
 				972EC02122417397005E47A1 /* Constants.swift */,
 				972EC04122417513005E47A1 /* R.generated.swift */,
@@ -191,7 +192,7 @@
 				972EC0062241733D005E47A1 /* Cell */,
 				972EC00322417261005E47A1 /* Custom */,
 				972EBFFE224171EB005E47A1 /* Helpers */,
-				97211A432241649D00E8518C /* ViewController.swift */,
+				97211A432241649D00E8518C /* ExampleViewController.swift */,
 				97211A452241649D00E8518C /* Main.storyboard */,
 			);
 			path = View;
@@ -238,6 +239,8 @@
 		972EC023224173B3005E47A1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				97211A482241649F00E8518C /* Assets.xcassets */,
+				97211A4A2241649F00E8518C /* LaunchScreen.storyboard */,
 				972EC0552241762E005E47A1 /* Font */,
 				972EC052224175EC005E47A1 /* Classes */,
 				972EC04B22417559005E47A1 /* Protocol */,
@@ -291,6 +294,14 @@
 				972EC0562241763D005E47A1 /* avenir-roman.ttf */,
 			);
 			path = Font;
+			sourceTree = "<group>";
+		};
+		979BBA1C22417B9200FCB4CC /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				979BBA1D22417BAD00FCB4CC /* ExamplePresenter.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -460,8 +471,9 @@
 				972EC039224173DC005E47A1 /* UIColor+Helpers.swift in Sources */,
 				972EC054224175F8005E47A1 /* Amount.swift in Sources */,
 				972EC01522417360005E47A1 /* RadioButtonTableViewCell.swift in Sources */,
-				97211A442241649D00E8518C /* ViewController.swift in Sources */,
+				97211A442241649D00E8518C /* ExampleViewController.swift in Sources */,
 				972EC03C224173DC005E47A1 /* Date+Helpers.swift in Sources */,
+				979BBA1E22417BAD00FCB4CC /* ExamplePresenter.swift in Sources */,
 				972EC032224173DC005E47A1 /* UIViewController+Helpers.swift in Sources */,
 				972EC01C22417360005E47A1 /* ButtonTableViewCell.swift in Sources */,
 				972EC03A224173DC005E47A1 /* UITextField+Helpers.swift in Sources */,
@@ -630,7 +642,7 @@
 			baseConfigurationReference = C952259E8B412AF4E2923D79 /* Pods-template-ios.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = LXE5SAW38H;
 				INFOPLIST_FILE = "template-ios/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
@@ -638,8 +650,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "py.com.vel.template.dev.template-ios";
+				PRODUCT_BUNDLE_IDENTIFIER = py.com.vel.template.dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Development Wildcard";
 				SWIFT_OBJC_BRIDGING_HEADER = "template-ios/template-ios-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -651,16 +664,17 @@
 			baseConfigurationReference = 6605F5FF0CA559D4C754C488 /* Pods-template-ios.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LXE5SAW38H;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "template-ios/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "py.com.vel.template.dev.template-ios";
+				PRODUCT_BUNDLE_IDENTIFIER = py.com.vel.template.dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "template-ios/template-ios-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";

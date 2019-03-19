@@ -24,7 +24,7 @@ class SwitchTableViewCell: UITableViewCell {
         label.lineBreakMode = .byWordWrapping
         label.numberOfLines = 0
         
-        contentView.backgroundColor = .br_white
+        contentView.backgroundColor = .clear
 
         optionSwitch.addTarget(self, action: #selector(optionSwitchOnChange(_:)), for: .valueChanged)
     }
