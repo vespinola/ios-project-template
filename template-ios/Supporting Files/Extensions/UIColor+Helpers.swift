@@ -58,7 +58,7 @@ extension UIColor {
     }
     
     static var br_white: UIColor {
-        return UIColor(netHex: 0xF5ECEA)
+        return .white
     }
     
     static var br_gray: UIColor {

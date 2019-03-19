@@ -3,7 +3,7 @@
 //  
 //
 //  Created by Vladimir Espinola Lezcano on 3/7/17.
-//  Copyright © 2017 roshka. All rights reserved.
+//  Copyright © 2017. All rights reserved.
 //
 
 import UIKit

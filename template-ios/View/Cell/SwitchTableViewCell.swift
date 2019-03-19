@@ -1,9 +1,9 @@
 //
 //  CheckboxField.swift
-//  Atlas-iOS
+//  
 //
 //  Created by Vladimir Espinola Lezcano on 4/23/18.
-//  Copyright © 2018 roshka. All rights reserved.
+//  Copyright © 2018. All rights reserved.
 //
 
 import UIKit
