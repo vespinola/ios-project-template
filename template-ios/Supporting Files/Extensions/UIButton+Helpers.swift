@@ -10,8 +10,8 @@ import UIKit
 
 extension UIButton {
     func setupDefaultStyle() {
-        backgroundColor = .br_black
-        setTitleColor(.br_white, for: .normal)
+        backgroundColor = .te_black
+        setTitleColor(.te_white, for: .normal)
         titleLabel?.font = .avenirHeavy20
         layer.masksToBounds = true
         layer.cornerRadius = .leastNormalMagnitude

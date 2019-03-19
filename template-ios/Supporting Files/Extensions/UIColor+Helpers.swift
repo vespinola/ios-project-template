@@ -49,40 +49,40 @@ extension UIColor {
         return String(format: "#%06x", rgb)
     }
     
-    static var br_black: UIColor {
+    static var te_black: UIColor {
         return UIColor(netHex: 0x272827)
     }
     
-    static var br_pink: UIColor {
+    static var te_pink: UIColor {
         return UIColor(netHex: 0xE8CDCD)
     }
     
-    static var br_white: UIColor {
+    static var te_white: UIColor {
         return .white
     }
     
-    static var br_gray: UIColor {
+    static var te_gray: UIColor {
         return UIColor(netHex: 0xA39998)
     }
     
-    static var br_wine: UIColor {
+    static var te_wine: UIColor {
         return UIColor(netHex: 0x673242)
     }
     
-    static var br_green: UIColor {
+    static var te_green: UIColor {
         return UIColor(netHex: 0x09AF00)
     }
     
     //Pastel
-    static var br_pred: UIColor {
+    static var te_pred: UIColor {
         return UIColor(netHex: 0xEF5350)
     }
     
-    static var br_pgreen: UIColor {
+    static var te_pgreen: UIColor {
         return UIColor(netHex: 0x43A047)
     }
     
-    static var br_porange: UIColor {
+    static var te_porange: UIColor {
         return UIColor(netHex: 0xE65100)
     }
 }

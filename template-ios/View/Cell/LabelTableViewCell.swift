@@ -32,7 +32,7 @@ class LabelTableViewCell: CustomTableViewCell {
         titleLabel.font = .avenirRoman16
         titleLabel.numberOfLines = 0
         titleLabel.lineBreakMode = .byWordWrapping
-        titleLabel.textColor = .br_black
+        titleLabel.textColor = .te_black
     }
     
     override func prepareForReuse() {

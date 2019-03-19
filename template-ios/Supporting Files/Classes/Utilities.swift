@@ -14,7 +14,7 @@ class Utilities {
     class func showSnackbar(with message: String,
                             font: UIFont = .avenirHeavy16,
                             textColor: UIColor = .white,
-                            backgroundColor: UIColor = .br_black,
+                            backgroundColor: UIColor = .te_black,
                             dismissBlock: TTGSnackbar.TTGDismissBlock? = nil) {
         let snackbar = TTGSnackbar(message: message, duration: .long)
         

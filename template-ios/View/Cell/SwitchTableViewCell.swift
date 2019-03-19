@@ -20,7 +20,7 @@ class SwitchTableViewCell: UITableViewCell {
         selectionStyle = .none
         
         label.font = .avenirRoman16
-        label.textColor = .br_black
+        label.textColor = .te_black
         label.lineBreakMode = .byWordWrapping
         label.numberOfLines = 0
         

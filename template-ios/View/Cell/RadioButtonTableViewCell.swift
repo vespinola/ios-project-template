@@ -37,7 +37,7 @@ class RadioButtonTableViewCell: UITableViewCell {
         selectionStyle = .none
         
         label.font = .avenirRoman16
-        label.textColor = .br_black
+        label.textColor = .te_black
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
         label.isUserInteractionEnabled = true
@@ -45,11 +45,11 @@ class RadioButtonTableViewCell: UITableViewCell {
         
         let radioUnchecked = R.image.uncheckedRadioButton()!
             .withRenderingMode(.alwaysTemplate)
-            .tinted(with: .br_black)
+            .tinted(with: .te_black)
         
         let radioChecked = R.image.checkedRadioButton()!
             .withRenderingMode(.alwaysTemplate)
-            .tinted(with: .br_black)
+            .tinted(with: .te_black)
         
         radioButton.setBackgroundImage(radioUnchecked, for: .normal)
         radioButton.setBackgroundImage(radioChecked, for: .selected)
@@ -58,7 +58,7 @@ class RadioButtonTableViewCell: UITableViewCell {
         radioButton.tintColor = .clear
         radioButton.addTarget(self, action: #selector(RadioButtonTableViewCell.radioButtonTapped), for: .touchUpInside)
         
-        contentView.backgroundColor = .br_white
+        contentView.backgroundColor = .te_white
         label.backgroundColor = .clear
         radioButton.backgroundColor = .clear
     }

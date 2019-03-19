@@ -104,8 +104,8 @@ class InputTableViewCell: CustomTableViewCell {
         textField.autocorrectionType = .no
         textField.font = UIFont.avenirRoman16
         textField.textColor = .black
-        textField.selectedTitleColor = .br_black
-        textField.selectedLineColor = .br_black
+        textField.selectedTitleColor = .te_black
+        textField.selectedLineColor = .te_black
         textField.lineHeight = 2.0
         textField.selectedLineHeight = 2.0
         textField.titleFormatter = { [unowned self] (text: String) in
@@ -124,7 +124,7 @@ class InputTableViewCell: CustomTableViewCell {
         
         arrowImageView.image = R.image.arrowDown()?
             .withRenderingMode(.alwaysTemplate)
-            .tinted(with: .br_wine)
+            .tinted(with: .te_wine)
         
         arrowImageView.isHidden = false
         arrowImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(InputTableViewCell.pickerView(_:didSelectRow:inComponent:))))
@@ -139,11 +139,11 @@ class InputTableViewCell: CustomTableViewCell {
         let button = UIButton()
         let unchecked = R.image.visibilityOff()!
             .withRenderingMode(.alwaysTemplate)
-            .tinted(with: .br_black)
+            .tinted(with: .te_black)
         
         let checked = R.image.visibility()!
             .withRenderingMode(.alwaysTemplate)
-            .tinted(with: .br_black)
+            .tinted(with: .te_black)
         
         button.setBackgroundImage(unchecked, for: .normal)
         button.setBackgroundImage(checked, for: .selected)

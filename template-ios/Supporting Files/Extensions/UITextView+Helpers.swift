@@ -13,7 +13,7 @@ extension UITextView {
     func addDoneButton(callback: (() -> Void)? = nil) {
         let toolbar = UIToolbar()
         toolbar.translatesAutoresizingMaskIntoConstraints = true
-        toolbar.tintColor = .br_wine
+        toolbar.tintColor = .te_wine
         toolbar.backgroundColor = .white
         let closeBarButtonItem = BarButtonItem(title: "Done", onClick: { _ in
             self.resignFirstResponder()

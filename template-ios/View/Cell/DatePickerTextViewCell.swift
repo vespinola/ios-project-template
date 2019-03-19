@@ -40,9 +40,9 @@ class DatePickerTextViewCell: UITableViewCell {
         textField.delegate = self
         textField.tintColor = UIColor.black
         textField.font = .avenirRoman16
-        textField.textColor = .br_black
-        textField.selectedTitleColor = .br_black
-        textField.selectedLineColor = .br_black
+        textField.textColor = .te_black
+        textField.selectedTitleColor = .te_black
+        textField.selectedLineColor = .te_black
         textField.selectedLineHeight = 2.0
         textField.lineHeight = 2.0
         textField.titleFormatter = { (text: String) in
@@ -60,7 +60,7 @@ class DatePickerTextViewCell: UITableViewCell {
         pickerView.backgroundColor = .clear
         pickerView.addTarget(self, action: #selector(datePickerValueChanged), for: .valueChanged)
         
-        arrowImageView.image = R.image.arrowDown()?.withRenderingMode(.alwaysTemplate).tinted(with: .br_wine)
+        arrowImageView.image = R.image.arrowDown()?.withRenderingMode(.alwaysTemplate).tinted(with: .te_wine)
         arrowImageView.isHidden = false
         arrowImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(datePickerValueChanged)))
         textField.inputView = pickerView
