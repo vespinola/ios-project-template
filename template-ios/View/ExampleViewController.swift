@@ -44,7 +44,8 @@ class ExampleViewController: UIViewController {
             section.add([
                 Field(for: { indexPath in
                     let cell = LabelTableViewCell.instante(from: tableView, at: indexPath)
-                    cell.titleLabel.text = "This is just an example of label"
+                    cell.titleLabel.text = "This is just an example of Label"
+                    cell.titleLabel.font = .avenirHeavy20
                     cell.padding = UIEdgeInsets(top: 20, left: 20, bottom: 4, right: 20)
                     return cell
                 }),
@@ -157,7 +158,7 @@ class ExampleViewController: UIViewController {
 
 extension ExampleViewController: ExampleView {
     func performAfterCall() {
-        //TODO
+        Utilities.showSnackbar(with: "TAPPED")
     }
     
     func startLoading() {

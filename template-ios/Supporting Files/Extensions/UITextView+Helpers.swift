@@ -15,7 +15,7 @@ extension UITextView {
         toolbar.translatesAutoresizingMaskIntoConstraints = true
         toolbar.tintColor = .br_wine
         toolbar.backgroundColor = .white
-        let closeBarButtonItem = BarButtonItem(title: "Listo", onClick: { _ in
+        let closeBarButtonItem = BarButtonItem(title: "Done", onClick: { _ in
             self.resignFirstResponder()
             callback?()
         })

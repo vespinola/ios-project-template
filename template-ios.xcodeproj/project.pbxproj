@@ -56,6 +56,7 @@
 		979BBA1B2241793400FCB4CC /* avenir-roman.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 972EC0562241763D005E47A1 /* avenir-roman.ttf */; };
 		979BBA1E22417BAD00FCB4CC /* ExamplePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979BBA1D22417BAD00FCB4CC /* ExamplePresenter.swift */; };
 		979BBA20224182E700FCB4CC /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979BBA1F224182E700FCB4CC /* Utilities.swift */; };
+		979BBA22224188E100FCB4CC /* CustomBannerColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979BBA21224188E100FCB4CC /* CustomBannerColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -111,6 +112,7 @@
 		972EC05A22417834005E47A1 /* template-ios-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "template-ios-Bridging-Header.h"; sourceTree = "<group>"; };
 		979BBA1D22417BAD00FCB4CC /* ExamplePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamplePresenter.swift; sourceTree = "<group>"; };
 		979BBA1F224182E700FCB4CC /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		979BBA21224188E100FCB4CC /* CustomBannerColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBannerColor.swift; sourceTree = "<group>"; };
 		C952259E8B412AF4E2923D79 /* Pods-template-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-template-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-template-ios/Pods-template-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		DB33D7061FE6C53F2669687F /* Pods_template_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_template_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -205,6 +207,7 @@
 			children = (
 				972EC00022417202005E47A1 /* TableViewProvider.swift */,
 				972EBFFF22417202005E47A1 /* FormSection.swift */,
+				979BBA21224188E100FCB4CC /* CustomBannerColor.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -475,6 +478,7 @@
 				972EC054224175F8005E47A1 /* Amount.swift in Sources */,
 				972EC01522417360005E47A1 /* RadioButtonTableViewCell.swift in Sources */,
 				97211A442241649D00E8518C /* ExampleViewController.swift in Sources */,
+				979BBA22224188E100FCB4CC /* CustomBannerColor.swift in Sources */,
 				972EC03C224173DC005E47A1 /* Date+Helpers.swift in Sources */,
 				979BBA1E22417BAD00FCB4CC /* ExamplePresenter.swift in Sources */,
 				972EC032224173DC005E47A1 /* UIViewController+Helpers.swift in Sources */,
