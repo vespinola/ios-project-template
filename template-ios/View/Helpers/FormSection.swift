@@ -18,7 +18,6 @@ class FormSection {
     var footerFor: ((Int) -> UIView?)? = nil
     var footerHeight: CGFloat! = .leastNormalMagnitude
     
-    var cellFor: ((IndexPath) -> UITableViewCell)!
     var cells: [Field] = []
     
     init(_ cells: [Field]? = nil){
@@ -31,30 +30,36 @@ class FormSection {
     }
     
     func add(_ cells: [Field]){
-        self.cells = self.cells + cells
+        self.cells += cells
     }
     
     @discardableResult
-    func configure(_ callback: (FormSection) -> FormSection) -> FormSection {
-        return callback(self)
+    func configure(_ handler: (FormSection) -> Void) -> Self {
+        handler(self)
+        return self
     }
 }
 
 class Field {
     var cell: ((IndexPath) -> UITableViewCell)!
     var onSelect: ((IndexPath) -> Void)?
-    var height: CGFloat!
+    var height = UITableView.automaticDimension
     
-    init(for cell: ((IndexPath) -> UITableViewCell)? = nil,
-         onSelect: ((IndexPath) -> Void)? = nil, height: CGFloat = UITableView.automaticDimension) {
+    init(for cell: ((IndexPath) -> UITableViewCell)? = nil) {
         self.cell = cell
-        self.onSelect = onSelect
-        self.height = height
     }
     
     @discardableResult
-    func set(height: CGFloat) -> ((IndexPath) -> UITableViewCell)! {
+    func performOnSelection(_ handler: @escaping (IndexPath) -> Void) -> Self {
+        self.onSelect = handler
+        return self
+    }
+    
+    @discardableResult
+    func set(height: CGFloat) -> Self {
         self.height = height
-        return cell
+        return self
     }
 }
+
+
