@@ -6,11 +6,11 @@ target 'template-ios' do
   use_frameworks!
 
   # Pods for template-ios
-  pod 'Alamofire', '~> 4.7'
-  pod 'SnapKit', '~> 4.2'
-  pod 'AlamofireActivityLogger', '~> 2.5'
+  pod 'Alamofire', '5.0.0-beta.6'
+  pod 'SnapKit', '~> 5.0'
+  pod 'Sniffer', '~> 2.0'
   pod 'TPKeyboardAvoiding', '~> 1.3'
-  pod 'SkyFloatingLabelTextField', '~> 3.6'
+  pod 'SkyFloatingLabelTextField', '~> 3.7'
   pod 'ReachabilitySwift', '~> 4.3'
   pod 'R.swift'
   pod 'NotificationBannerSwift'
