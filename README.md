@@ -7,8 +7,8 @@
 ![alt text](https://github.com/openwindouw/ios-project-template/blob/develop/screenshots/screen-1.png)
 
 ## Requirements
-- Xcode 10.1
-- Swift 4.2
+- Xcode 10.2
+- Swift 5
 
 ## Running Project
 - Download or clone repository
