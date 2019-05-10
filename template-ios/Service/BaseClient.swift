@@ -8,7 +8,7 @@
 
 import Foundation
 import Alamofire
-import AlamofireActivityLogger
+import Sniffer
 
 typealias failureCallback = (APIError) -> Void
 typealias MultipartPair = (key: String, data: Data, mimeType: String)
@@ -37,12 +37,11 @@ struct ResponseType {
 }
 
 class Client {
-    
     class func request<T: Codable>(
         verb: HTTPMethod = .get,
         route: Routes,
         parameters: [String: Any] = [:],
-        headers: [String: String] = [
+        headers: HTTPHeaders = [
             "Content-Type" : "application/json",
             "Accept" : "application/json"
         ],
@@ -62,7 +61,6 @@ class Client {
                      parameters: parameters,
                      encoding: encoding.alamofire,
                      headers: headers)
-            .log()
             .response(completionHandler: { response in
                 guard response.error == nil else {
                     //We got a timeout
@@ -99,28 +97,22 @@ class Client {
                 }
             }
             
-        }, to: route.endpoint, method: .post, headers: headers, encodingCompletion: { result in
-            switch result{
-            case .success(let upload, _, _):
-                upload.responseJSON { response in
-                    if let err = response.error{
-                        onError?(err)
-                        return
-                    }
-                    print("Succesfully uploaded")
-                    onCompletion?(nil)
-                }
-            case .failure(let error):
+        }, to: route.endpoint, method: .post, headers: headers).responseJSON { response in
+            if let error = response.error {
                 print("Error in upload: \(error.localizedDescription)")
                 onError?(error)
+                return
             }
-        })
+            print("Succesfully uploaded")
+            onCompletion?(nil)
+        }
     }
 }
 
-class BaseSessionManager: SessionManager {
+class BaseSessionManager: Session {
     static let shared: BaseSessionManager = {
         let configuration = URLSessionConfiguration.default
+        Sniffer.enable(in: configuration)
         configuration.timeoutIntervalForRequest = 30
         configuration.requestCachePolicy = .reloadIgnoringLocalAndRemoteCacheData
         let manager = BaseSessionManager(configuration: configuration)
