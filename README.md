@@ -1,7 +1,7 @@
 # ios-project-template
 #### Simple Template to start projects faster.
 
-[![Swift4.2](https://img.shields.io/badge/swift4.2-compatible-4BC51D.svg?style=flat)](https://developer.apple.com/swift)
+[![Swift5](https://img.shields.io/badge/swift5-compatible-4BC51D.svg?style=flat)](https://developer.apple.com/swift)
 [![MIT License](http://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://raw.githubusercontent.com/ra1028/Former/master/LICENSE)
 
 ![alt text](https://github.com/openwindouw/ios-project-template/blob/develop/screenshots/screen-1.png)
