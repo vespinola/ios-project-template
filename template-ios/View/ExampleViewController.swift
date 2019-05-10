@@ -39,7 +39,7 @@ class ExampleViewController: UIViewController {
     
     private func create() {
         let testSection = FormSection().configure { [unowned self] section in
-            guard let tableView = self.tableView else { return section }
+            guard let tableView = self.tableView else { return }
             
             section.add([
                 Field(for: { indexPath in
@@ -107,14 +107,12 @@ class ExampleViewController: UIViewController {
                     return cell
                 })
             ])
-            
-            return section
         }
         
         tableView.add(section: testSection)
         
         let radioSection = FormSection().configure { [unowned self] section in
-            guard let tableView = self.tableView else { return section }
+            guard let tableView = self.tableView else { return }
             
             section.add([
                 Field(for: { indexPath in
@@ -133,14 +131,12 @@ class ExampleViewController: UIViewController {
                     return cell
                 }),
             ])
-            
-            return section
         }
         
         tableView.add(section: radioSection)
         
         tableView.add(section: FormSection().configure({ [unowned self] section in
-            guard let tableView = self.tableView else { return section }
+            guard let tableView = self.tableView else { return }
             
             section.add(Field(for: { indexPath in
                 let cell = ButtonTableViewCell.instante(from: tableView, at: indexPath)
@@ -150,8 +146,6 @@ class ExampleViewController: UIViewController {
                 })
                 return cell
             }))
-            
-            return section
         }))
     }
 }
