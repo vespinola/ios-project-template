@@ -51,11 +51,11 @@ class CustomTableView: TPKeyboardAvoidingTableView {
         delegate = provider
     }
     
-    func add(section: FormSection) {
+    func add(section: Section) {
         sections.append(section)
     }
     
-    func add(sections: [FormSection]) {
+    func add(sections: [Section]) {
         self.sections = self.sections + sections
     }
     

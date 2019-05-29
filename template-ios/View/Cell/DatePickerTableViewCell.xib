@@ -19,7 +19,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VUe-bw-WP6" customClass="MDCTextField">
-                        <rect key="frame" x="8" y="0.0" width="346" height="143.5"/>
+                        <rect key="frame" x="20" y="0.0" width="322" height="143.5"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="textColor"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -29,8 +29,8 @@
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="VUe-bw-WP6" secondAttribute="bottom" id="LLg-Rr-AsE"/>
-                    <constraint firstAttribute="trailing" secondItem="VUe-bw-WP6" secondAttribute="trailing" constant="8" id="cbj-Rd-ysp"/>
-                    <constraint firstItem="VUe-bw-WP6" firstAttribute="leading" secondItem="4G3-bj-8rg" secondAttribute="leading" constant="8" id="ea1-Kz-0o9"/>
+                    <constraint firstAttribute="trailing" secondItem="VUe-bw-WP6" secondAttribute="trailing" constant="20" id="cbj-Rd-ysp"/>
+                    <constraint firstItem="VUe-bw-WP6" firstAttribute="leading" secondItem="4G3-bj-8rg" secondAttribute="leading" constant="20" id="ea1-Kz-0o9"/>
                     <constraint firstItem="VUe-bw-WP6" firstAttribute="top" secondItem="4G3-bj-8rg" secondAttribute="top" id="krN-V1-Fvp"/>
                 </constraints>
             </tableViewCellContentView>

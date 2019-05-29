@@ -7,9 +7,9 @@
 
 import UIKit
 
-typealias FormSections = [FormSection]
+typealias FormSections = [Section]
 
-class FormSection {
+class Section {
     //view header section
     var headerFor: ((Int) -> UIView?)? = nil
     var headerHeight: CGFloat! = .leastNormalMagnitude
@@ -34,7 +34,7 @@ class FormSection {
     }
     
     @discardableResult
-    func configure(_ handler: (FormSection) -> Void) -> Self {
+    func configure(_ handler: (Section) -> Void) -> Self {
         handler(self)
         return self
     }

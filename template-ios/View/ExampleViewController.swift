@@ -33,13 +33,13 @@ class ExampleViewController: BaseViewController {
         SwitchTableViewCell.register(in: tableView)
         RadioButtonTableViewCell.register(in: tableView)
         InputTableViewCell.register(in: tableView)
-        
+        DatePickerTableViewCell.register(in: tableView)
         
         tableView.initialize()
     }
     
     private func create() {
-        let testSection = FormSection().configure { [unowned self] section in
+        let testSection = Section().configure { [unowned self] section in
             guard let tableView = self.tableView else { return }
             
             section.add([
@@ -78,6 +78,12 @@ class ExampleViewController: BaseViewController {
                     return cell
                 }),
                 Field(for: { indexPath in
+                    let cell = DatePickerTableViewCell.instante(from: tableView, at: indexPath)
+                    cell.textField.placeholder = "Choose a date"
+                    cell.onSelect = { print($0.formatted) }
+                    return cell
+                }),
+                Field(for: { indexPath in
                     let cell = LabelTableViewCell.instante(from: tableView, at: indexPath)
                     cell.titleLabel.text = "Switches"
                     cell.titleLabel.font = .avenirHeavy16
@@ -86,15 +92,15 @@ class ExampleViewController: BaseViewController {
                 }),
                 Field(for: { indexPath in
                     let cell = SwitchTableViewCell.instante(from: tableView, at: indexPath)
-                    cell.configure(text: "Option 1 is enable", onChange: { isOn in
-                        print("option 1: \(isOn)")
+                    cell.configure(text: "Option 1 is \(cell.optionSwitch.isOn ? "enabled" : "disabled")", onChange: { isOn in
+                        cell.label.text = "Option 1 is \(cell.optionSwitch.isOn ? "enabled" : "disabled")"
                     })
                     return cell
                 }),
                 Field(for: { indexPath in
                     let cell = SwitchTableViewCell.instante(from: tableView, at: indexPath)
-                    cell.configure(text: "Option 2 is enable", onChange: { isOn in
-                        print("option 2: \(isOn)")
+                    cell.configure(text: "Option 2 is \(cell.optionSwitch.isOn ? "enabled" : "disabled")", onChange: { isOn in
+                        cell.label.text = "Option 2 is \(cell.optionSwitch.isOn ? "enabled" : "disabled")"
                     })
                     return cell
                 }),
@@ -110,7 +116,7 @@ class ExampleViewController: BaseViewController {
         
         tableView.add(section: testSection)
         
-        let radioSection = FormSection().configure { [unowned self] section in
+        let radioSection = Section().configure { [unowned self] section in
             guard let tableView = self.tableView else { return }
             
             section.add([
@@ -134,7 +140,7 @@ class ExampleViewController: BaseViewController {
         
         tableView.add(section: radioSection)
         
-        tableView.add(section: FormSection().configure({ [unowned self] section in
+        tableView.add(section: Section().configure({ [unowned self] section in
             guard let tableView = self.tableView else { return }
             
             section.add(Field(for: { indexPath in
