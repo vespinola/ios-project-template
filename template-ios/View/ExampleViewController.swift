@@ -52,30 +52,28 @@ class ExampleViewController: BaseViewController {
                 }),
                 Field(for: { indexPath in
                     let cell = InputTableViewCell.instante(from: tableView, at: indexPath)
-                    cell.textField.placeholder = "Put something funny here"
+                    cell.textField.placeholder = "Write something funny here"
                     cell.validate = { $0.hasValue }
-                    cell.errorMessage = "You have to define a text"
+                    cell.errorMessage = "You have to write something"
                     return cell
                 }),
                 Field(for: { indexPath in
                     let cell = InputTableViewCell.instante(from: tableView, at: indexPath)
-                    cell.textField.placeholder = "Put something secret"
+                    cell.textField.placeholder = "Tell me a secret"
                     cell.isSecureTextEntry = true
                     cell.validate = { $0.hasValue }
-                    cell.errorMessage = "Where's your secret key?"
+                    cell.errorMessage = "What's your secret?"
                     return cell
                 }),
                 Field(for: { indexPath in
                     let cell = InputTableViewCell.instante(from: tableView, at: indexPath)
-                    cell.textField.placeholder = "Pet"
+                    cell.textField.placeholder = "Favourite Pet"
                     cell.pickerContent = [
                         PickerItem(title: "Cat", value: "Cat"),
                         PickerItem(title: "Dog", value: "Dog"),
                     ]
                     
-                    cell.onFinishSelecting = { item in
-                        cell.textField.text = item.title
-                    }
+                    cell.onFinishSelecting = { cell.textField.text = $0.title }
                     
                     return cell
                 }),

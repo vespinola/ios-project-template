@@ -31,6 +31,7 @@ class ExamplePresenter: BasePresenterProtocol {
         
         #if DEBUG
         guard justForTest else {
+            justForTest = !justForTest
             view?.performOnError(with: "RANDOM ERROR")
             return
         }
