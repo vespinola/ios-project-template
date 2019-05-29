@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ExampleViewController: UIViewController {
+class ExampleViewController: BaseViewController {
     @IBOutlet weak var tableView: CustomTableView!
     private let presenter = ExamplePresenter()
     
@@ -33,6 +33,7 @@ class ExampleViewController: UIViewController {
         SwitchTableViewCell.register(in: tableView)
         RadioButtonTableViewCell.register(in: tableView)
         InputTableViewCell.register(in: tableView)
+        
         
         tableView.initialize()
     }
@@ -152,19 +153,19 @@ class ExampleViewController: UIViewController {
 
 extension ExampleViewController: ExampleView {
     func performAfterCall() {
-        Utilities.showSnackbar(with: "TAPPED")
+        Utilities.showSnackbar(with: "Everything was done!")
     }
     
     func startLoading() {
-        //TODO
+        showActivityIndicator()
     }
     
     func finishLoading() {
-        //TODO
+        hideActivityIndicator()
     }
     
     func performOnError(with message: String) {
-        //TODO
+        Utilities.showError(title: "FUTURE BANNER", message: message, in: self)
     }
 }
 

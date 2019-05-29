@@ -25,16 +25,15 @@
 		972EC01722417360005E47A1 /* ButtonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 972EC00A2241735F005E47A1 /* ButtonTableViewCell.xib */; };
 		972EC01822417360005E47A1 /* RadioButtonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 972EC00B2241735F005E47A1 /* RadioButtonTableViewCell.xib */; };
 		972EC01922417360005E47A1 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972EC00C2241735F005E47A1 /* CustomTableViewCell.swift */; };
-		972EC01A22417360005E47A1 /* DatePickerTextViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 972EC00D2241735F005E47A1 /* DatePickerTextViewCell.xib */; };
+		972EC01A22417360005E47A1 /* DatePickerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 972EC00D2241735F005E47A1 /* DatePickerTableViewCell.xib */; };
 		972EC01B22417360005E47A1 /* SwitchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 972EC00E2241735F005E47A1 /* SwitchTableViewCell.xib */; };
 		972EC01C22417360005E47A1 /* ButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972EC00F2241735F005E47A1 /* ButtonTableViewCell.swift */; };
-		972EC01D22417360005E47A1 /* DatePickerTextViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972EC0102241735F005E47A1 /* DatePickerTextViewCell.swift */; };
+		972EC01D22417360005E47A1 /* DatePickerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972EC0102241735F005E47A1 /* DatePickerTableViewCell.swift */; };
 		972EC01E22417360005E47A1 /* LabelTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 972EC0112241735F005E47A1 /* LabelTableViewCell.xib */; };
 		972EC01F22417360005E47A1 /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972EC01222417360005E47A1 /* SwitchTableViewCell.swift */; };
 		972EC02022417360005E47A1 /* LabelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972EC01322417360005E47A1 /* LabelTableViewCell.swift */; };
 		972EC02222417397005E47A1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972EC02122417397005E47A1 /* Constants.swift */; };
 		972EC031224173DC005E47A1 /* UIView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972EC025224173DB005E47A1 /* UIView+Helpers.swift */; };
-		972EC032224173DC005E47A1 /* UIViewController+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972EC026224173DB005E47A1 /* UIViewController+Helpers.swift */; };
 		972EC033224173DC005E47A1 /* Measurement+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972EC027224173DC005E47A1 /* Measurement+Helpers.swift */; };
 		972EC034224173DC005E47A1 /* UIStackView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972EC028224173DC005E47A1 /* UIStackView+Helpers.swift */; };
 		972EC035224173DC005E47A1 /* UIImage+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972EC029224173DC005E47A1 /* UIImage+Helpers.swift */; };
@@ -57,6 +56,7 @@
 		979BBA1E22417BAD00FCB4CC /* ExamplePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979BBA1D22417BAD00FCB4CC /* ExamplePresenter.swift */; };
 		979BBA20224182E700FCB4CC /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979BBA1F224182E700FCB4CC /* Utilities.swift */; };
 		979BBA22224188E100FCB4CC /* CustomBannerColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979BBA21224188E100FCB4CC /* CustomBannerColor.swift */; };
+		97FEE193229F29F4009EEA78 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97FEE192229F29F4009EEA78 /* BaseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,16 +80,15 @@
 		972EC00A2241735F005E47A1 /* ButtonTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ButtonTableViewCell.xib; sourceTree = "<group>"; };
 		972EC00B2241735F005E47A1 /* RadioButtonTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RadioButtonTableViewCell.xib; sourceTree = "<group>"; };
 		972EC00C2241735F005E47A1 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
-		972EC00D2241735F005E47A1 /* DatePickerTextViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DatePickerTextViewCell.xib; sourceTree = "<group>"; };
+		972EC00D2241735F005E47A1 /* DatePickerTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DatePickerTableViewCell.xib; sourceTree = "<group>"; };
 		972EC00E2241735F005E47A1 /* SwitchTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SwitchTableViewCell.xib; sourceTree = "<group>"; };
 		972EC00F2241735F005E47A1 /* ButtonTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonTableViewCell.swift; sourceTree = "<group>"; };
-		972EC0102241735F005E47A1 /* DatePickerTextViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerTextViewCell.swift; sourceTree = "<group>"; };
+		972EC0102241735F005E47A1 /* DatePickerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerTableViewCell.swift; sourceTree = "<group>"; };
 		972EC0112241735F005E47A1 /* LabelTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LabelTableViewCell.xib; sourceTree = "<group>"; };
 		972EC01222417360005E47A1 /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
 		972EC01322417360005E47A1 /* LabelTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelTableViewCell.swift; sourceTree = "<group>"; };
 		972EC02122417397005E47A1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		972EC025224173DB005E47A1 /* UIView+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Helpers.swift"; sourceTree = "<group>"; };
-		972EC026224173DB005E47A1 /* UIViewController+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Helpers.swift"; sourceTree = "<group>"; };
 		972EC027224173DC005E47A1 /* Measurement+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Measurement+Helpers.swift"; sourceTree = "<group>"; };
 		972EC028224173DC005E47A1 /* UIStackView+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStackView+Helpers.swift"; sourceTree = "<group>"; };
 		972EC029224173DC005E47A1 /* UIImage+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Helpers.swift"; sourceTree = "<group>"; };
@@ -113,6 +112,7 @@
 		979BBA1D22417BAD00FCB4CC /* ExamplePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamplePresenter.swift; sourceTree = "<group>"; };
 		979BBA1F224182E700FCB4CC /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		979BBA21224188E100FCB4CC /* CustomBannerColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBannerColor.swift; sourceTree = "<group>"; };
+		97FEE192229F29F4009EEA78 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		C952259E8B412AF4E2923D79 /* Pods-template-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-template-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-template-ios/Pods-template-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		DB33D7061FE6C53F2669687F /* Pods_template_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_template_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -193,6 +193,7 @@
 		972EBFFD22417127005E47A1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				97FEE191229F29DF009EEA78 /* Common */,
 				972EC0062241733D005E47A1 /* Cell */,
 				972EC00322417261005E47A1 /* Custom */,
 				972EBFFE224171EB005E47A1 /* Helpers */,
@@ -227,8 +228,8 @@
 				972EC00C2241735F005E47A1 /* CustomTableViewCell.swift */,
 				972EC00F2241735F005E47A1 /* ButtonTableViewCell.swift */,
 				972EC00A2241735F005E47A1 /* ButtonTableViewCell.xib */,
-				972EC0102241735F005E47A1 /* DatePickerTextViewCell.swift */,
-				972EC00D2241735F005E47A1 /* DatePickerTextViewCell.xib */,
+				972EC0102241735F005E47A1 /* DatePickerTableViewCell.swift */,
+				972EC00D2241735F005E47A1 /* DatePickerTableViewCell.xib */,
 				972EC0092241735F005E47A1 /* InputTableViewCell.swift */,
 				972EC0072241735F005E47A1 /* InputTableViewCell.xib */,
 				972EC01322417360005E47A1 /* LabelTableViewCell.swift */,
@@ -268,7 +269,6 @@
 				972EC02E224173DC005E47A1 /* UITextField+Helpers.swift */,
 				972EC02F224173DC005E47A1 /* UITextView+Helpers.swift */,
 				972EC025224173DB005E47A1 /* UIView+Helpers.swift */,
-				972EC026224173DB005E47A1 /* UIViewController+Helpers.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -308,6 +308,14 @@
 				979BBA1D22417BAD00FCB4CC /* ExamplePresenter.swift */,
 			);
 			path = Presenter;
+			sourceTree = "<group>";
+		};
+		97FEE191229F29DF009EEA78 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				97FEE192229F29F4009EEA78 /* BaseViewController.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -375,7 +383,7 @@
 				979BBA1A2241793400FCB4CC /* avenir-heavy.ttf in Resources */,
 				979BBA1B2241793400FCB4CC /* avenir-roman.ttf in Resources */,
 				97211A4C2241649F00E8518C /* LaunchScreen.storyboard in Resources */,
-				972EC01A22417360005E47A1 /* DatePickerTextViewCell.xib in Resources */,
+				972EC01A22417360005E47A1 /* DatePickerTableViewCell.xib in Resources */,
 				972EC01822417360005E47A1 /* RadioButtonTableViewCell.xib in Resources */,
 				97211A492241649F00E8518C /* Assets.xcassets in Resources */,
 				972EC01722417360005E47A1 /* ButtonTableViewCell.xib in Resources */,
@@ -394,41 +402,41 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-template-ios/Pods-template-ios-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-template-ios/Pods-template-ios-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
+				"${BUILT_PRODUCTS_DIR}/MDFInternationalization/MDFInternationalization.framework",
+				"${BUILT_PRODUCTS_DIR}/MDFTextAccessibility/MDFTextAccessibility.framework",
 				"${BUILT_PRODUCTS_DIR}/MarqueeLabel/MarqueeLabel.framework",
+				"${BUILT_PRODUCTS_DIR}/MaterialComponents/MaterialComponents.framework",
+				"${BUILT_PRODUCTS_DIR}/MotionAnimator/MotionAnimator.framework",
+				"${BUILT_PRODUCTS_DIR}/MotionInterchange/MotionInterchange.framework",
 				"${BUILT_PRODUCTS_DIR}/NotificationBannerSwift/NotificationBannerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
 				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
-				"${BUILT_PRODUCTS_DIR}/SkyFloatingLabelTextField/SkyFloatingLabelTextField.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Sniffer/Sniffer.framework",
 				"${BUILT_PRODUCTS_DIR}/TPKeyboardAvoiding/TPKeyboardAvoiding.framework",
-				"${BUILT_PRODUCTS_DIR}/TTGSnackbar/TTGSnackbar.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hero.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFInternationalization.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFTextAccessibility.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MarqueeLabel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MaterialComponents.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MotionAnimator.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MotionInterchange.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NotificationBannerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkyFloatingLabelTextField.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Sniffer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TPKeyboardAvoiding.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TTGSnackbar.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-template-ios/Pods-template-ios-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-template-ios/Pods-template-ios-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		972EBFF522416A0B005E47A1 /* ShellScript */ = {
@@ -475,7 +483,7 @@
 				972EC01622417360005E47A1 /* InputTableViewCell.swift in Sources */,
 				972EC038224173DC005E47A1 /* UIButton+Helpers.swift in Sources */,
 				972EC034224173DC005E47A1 /* UIStackView+Helpers.swift in Sources */,
-				972EC01D22417360005E47A1 /* DatePickerTextViewCell.swift in Sources */,
+				972EC01D22417360005E47A1 /* DatePickerTableViewCell.swift in Sources */,
 				972EC035224173DC005E47A1 /* UIImage+Helpers.swift in Sources */,
 				972EC03E22417456005E47A1 /* BarButtonItem.swift in Sources */,
 				972EC036224173DC005E47A1 /* UIFont+Helpers.swift in Sources */,
@@ -486,7 +494,6 @@
 				979BBA22224188E100FCB4CC /* CustomBannerColor.swift in Sources */,
 				972EC03C224173DC005E47A1 /* Date+Helpers.swift in Sources */,
 				979BBA1E22417BAD00FCB4CC /* ExamplePresenter.swift in Sources */,
-				972EC032224173DC005E47A1 /* UIViewController+Helpers.swift in Sources */,
 				972EC01C22417360005E47A1 /* ButtonTableViewCell.swift in Sources */,
 				979BBA20224182E700FCB4CC /* Utilities.swift in Sources */,
 				972EC03A224173DC005E47A1 /* UITextField+Helpers.swift in Sources */,
@@ -497,6 +504,7 @@
 				972EC04222417513005E47A1 /* R.generated.swift in Sources */,
 				972EC02222417397005E47A1 /* Constants.swift in Sources */,
 				972EC037224173DC005E47A1 /* String+Helpers.swift in Sources */,
+				97FEE193229F29F4009EEA78 /* BaseViewController.swift in Sources */,
 				972EC00522417279005E47A1 /* CustomTableView.swift in Sources */,
 				972EC031224173DC005E47A1 /* UIView+Helpers.swift in Sources */,
 				972EBFFC22416DED005E47A1 /* Routes.swift in Sources */,

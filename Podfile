@@ -10,11 +10,12 @@ target 'template-ios' do
   pod 'SnapKit', '~> 5.0'
   pod 'Sniffer', '~> 2.0'
   pod 'TPKeyboardAvoiding', '~> 1.3'
-  pod 'SkyFloatingLabelTextField', '~> 3.7'
   pod 'ReachabilitySwift', '~> 4.3'
   pod 'R.swift'
-  pod 'NotificationBannerSwift'
-  pod 'TTGSnackbar', '~> 1.7'
-  pod 'Hero', '~> 1.4'
+  pod 'MaterialComponents/TextFields'
+  pod 'MaterialComponents/Buttons'
+  pod 'MaterialComponents/Snackbar'
+  pod 'MaterialComponents/ActivityIndicator'
+  pod 'MaterialComponents/Dialogs'
 
 end

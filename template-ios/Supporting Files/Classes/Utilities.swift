@@ -7,56 +7,38 @@
 //
 
 import Foundation
-import TTGSnackbar
-import NotificationBannerSwift
+import MaterialComponents.MaterialSnackbar
+import MaterialComponents.MaterialDialogs
 
-class Utilities {
-    class func showSnackbar(with message: String,
+func performForUI(_ callback: () -> Void) {
+    callback()
+}
+
+func delay(_ delay: Double, closure: @escaping ()-> Void) {
+    let when = DispatchTime.now() + delay
+    DispatchQueue.main.asyncAfter(deadline: when, execute: closure)
+}
+
+struct Utilities {
+    static func showSnackbar(with text: String,
                             font: UIFont = .avenirHeavy16,
                             textColor: UIColor = .white,
                             backgroundColor: UIColor = .te_black,
-                            dismissBlock: TTGSnackbar.TTGDismissBlock? = nil) {
-        let snackbar = TTGSnackbar(message: message, duration: .long)
+                            dismissBlock: (() -> Void)? = nil) {
         
-        // Set text color
-        snackbar.messageTextColor = textColor
         
-        // Set font
-        snackbar.messageTextFont = font
         
-        // Set background
-        snackbar.backgroundColor = backgroundColor
-        
-        // Add the gesture recognizer callbacks
-        snackbar.onTapBlock = { snackbar in
-            snackbar.dismiss()
-        }
-        
-        snackbar.contentInset = UIEdgeInsets(top: 16, left: 20, bottom: 16, right: 20)
-        snackbar.bottomMargin = Metrics.defaultPadding
-        
-        snackbar.dismissBlock = dismissBlock
-        
-        snackbar.onSwipeBlock = { (snackbar, direction) in
-            
-            // Change the animation type to simulate being dismissed in that direction
-            if direction == .right {
-                snackbar.animationType = .slideFromLeftToRight
-            } else if direction == .left {
-                snackbar.animationType = .slideFromRightToLeft
-            } else if direction == .up {
-                snackbar.animationType = .slideFromTopBackToTop
-            } else if direction == .down {
-                snackbar.animationType = .slideFromTopBackToTop
-            }
-            
-            snackbar.dismiss()
-        }
-        
-        snackbar.show()
+        let message = MDCSnackbarMessage()
+        message.text = text
+        MDCSnackbarManager.show(message)
     }
     
-    class func showError(title: String, subtitle: String = "") {
-        GrowingNotificationBanner(title: title, subtitle: subtitle, style: .danger, colors: CustomBannerColors()).show()
+    static func showError(title: String, message: String, in viewController: UIViewController ) {
+        // Present a modal alert
+        let alertController = MDCAlertController(title: title, message: message)
+        let action = MDCAlertAction(title:"OK") { (action) in print("OK") }
+        alertController.addAction(action)
+        
+        viewController.present(alertController, animated:true, completion: nil)
     }
 }

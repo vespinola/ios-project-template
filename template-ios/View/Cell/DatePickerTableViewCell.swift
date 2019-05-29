@@ -7,18 +7,16 @@
 //
 
 import UIKit
-import SkyFloatingLabelTextField
+import MaterialComponents.MDCTextField
 
-class DatePickerTextViewCell: UITableViewCell {
-    @IBOutlet weak var textField: SkyFloatingLabelTextField!
-    @IBOutlet weak var arrowImageView: UIImageView!
-    
+class DatePickerTableViewCell: UITableViewCell {
+    @IBOutlet weak var textField: MDCTextField!
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var trailingConstraint: NSLayoutConstraint!
     @IBOutlet weak var topConstraint: NSLayoutConstraint!
     @IBOutlet weak var leadingConstraint: NSLayoutConstraint!
     
-    var pickerView: UIDatePicker!
+    private var pickerView: UIDatePicker!
     var onSelect: ((Date) -> Void)?
     var onBeginEditing: (() -> Void)?
     
@@ -33,6 +31,11 @@ class DatePickerTextViewCell: UITableViewCell {
 
     static let defaultHeight: CGFloat = 60
     
+    private lazy var textFieldControllerFloating: MDCTextInputControllerFilled = {
+        let textFieldControllerFloating = MDCTextInputControllerFilled(textInput: textField) // Hold on as a property
+        return textFieldControllerFloating
+    }()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -41,13 +44,6 @@ class DatePickerTextViewCell: UITableViewCell {
         textField.tintColor = UIColor.black
         textField.font = .avenirRoman16
         textField.textColor = .te_black
-        textField.selectedTitleColor = .te_black
-        textField.selectedLineColor = .te_black
-        textField.selectedLineHeight = 2.0
-        textField.lineHeight = 2.0
-        textField.titleFormatter = { (text: String) in
-            return text.lowercased().capitalized
-        }
         textField.adjustsFontSizeToFitWidth = true
         textField.addDoneButton() {
             self.datePickerValueChanged()
@@ -55,14 +51,38 @@ class DatePickerTextViewCell: UITableViewCell {
         
         contentView.backgroundColor = .clear
         
+        textFieldControllerFloating.errorColor = .te_pred
+        textFieldControllerFloating.activeColor = .te_green
+        textFieldControllerFloating.normalColor = .te_black
+        textFieldControllerFloating.isFloatingEnabled = true
+        textFieldControllerFloating.underlineViewMode = .always
+        
+        setupPicker()
+    }
+    
+    private func setupPicker(){
         pickerView = UIDatePicker()
         pickerView.datePickerMode = .date
         pickerView.backgroundColor = .clear
         pickerView.addTarget(self, action: #selector(datePickerValueChanged), for: .valueChanged)
         
-        arrowImageView.image = R.image.arrowDown()?.withRenderingMode(.alwaysTemplate).tinted(with: .te_wine)
-        arrowImageView.isHidden = false
-        arrowImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(datePickerValueChanged)))
+        textField.rightViewMode = .always
+        
+        let container = UIView(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
+        let image = R.image.dropDown()?
+            .withRenderingMode(.alwaysTemplate)
+            .tinted(with: .te_black)
+        
+        let button = UIButton()
+        button.setBackgroundImage(image, for: .normal)
+        button.setBackgroundImage(image, for: .selected)
+        button.setBackgroundImage(image, for: .highlighted)
+        button.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+        button.isSelected = true
+        button.addTarget(self, action: #selector(InputTableViewCell.pickerView(_:didSelectRow:inComponent:)), for: .touchUpInside)
+        container.addSubview(button)
+        textField.rightView = container
+        
         textField.inputView = pickerView
     }
     
@@ -73,7 +93,7 @@ class DatePickerTextViewCell: UITableViewCell {
     
 }
 
-extension DatePickerTextViewCell: UITextFieldDelegate {
+extension DatePickerTableViewCell: UITextFieldDelegate {
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         onBeginEditing?()
         return true
@@ -84,7 +104,7 @@ extension DatePickerTextViewCell: UITextFieldDelegate {
     }
 }
 
-extension DatePickerTextViewCell {
+extension DatePickerTableViewCell {
     @objc func datePickerValueChanged() {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .medium
@@ -95,12 +115,12 @@ extension DatePickerTextViewCell {
     }
 }
 
-extension DatePickerTextViewCell: TableViewProtocol {
+extension DatePickerTableViewCell: TableViewProtocol {
     static func register(in tableView: UITableView) {
-        tableView.register(UINib(resource: R.nib.datePickerTextViewCell), forCellReuseIdentifier: R.reuseIdentifier.datePickerTextViewCellReuseID.identifier)
+        tableView.register(UINib(resource: R.nib.datePickerTableViewCell), forCellReuseIdentifier: R.reuseIdentifier.datePickerTableViewCellReuseID.identifier)
     }
     
-    static func instante(from tableView: UITableView, at indexPath: IndexPath) -> DatePickerTextViewCell {
-        return tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.datePickerTextViewCellReuseID, for: indexPath)!
+    static func instante(from tableView: UITableView, at indexPath: IndexPath) -> DatePickerTableViewCell {
+        return tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.datePickerTableViewCellReuseID, for: indexPath)!
     }
 }

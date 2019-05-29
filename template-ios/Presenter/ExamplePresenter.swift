@@ -15,6 +15,10 @@ protocol ExampleView: BaseViewProtocol {
 class ExamplePresenter: BasePresenterProtocol {
     private weak var view: ExampleView?
     
+    #if DEBUG
+    private var justForTest = true
+    #endif
+    
     func attach(view: ExampleView) {
         self.view = view
     }
@@ -24,6 +28,21 @@ class ExamplePresenter: BasePresenterProtocol {
     }
     
     func doSomething() {
-        view?.performAfterCall()
+        
+        #if DEBUG
+        guard justForTest else {
+            view?.performOnError(with: "RANDOM ERROR")
+            return
+        }
+        
+        justForTest = !justForTest
+        #endif
+        
+        view?.startLoading()
+        
+        delay(5) {
+            self.view?.finishLoading()
+            self.view?.performAfterCall()
+        }
     }
 }

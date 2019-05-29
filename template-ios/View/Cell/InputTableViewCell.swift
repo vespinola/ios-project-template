@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import SkyFloatingLabelTextField
+import MaterialComponents.MaterialTextFields
 
 typealias PickerItem = (title: String, value: Any)
 
@@ -18,9 +18,8 @@ enum FloatingTextType {
 }
 
 class InputTableViewCell: CustomTableViewCell {
-    @IBOutlet weak var textField: SkyFloatingLabelTextField!
-    @IBOutlet weak var errorLabel: UILabel!
-    @IBOutlet weak var arrowImageView: UIImageView!
+    @IBOutlet weak var textField: MDCTextField!
+//    @IBOutlet weak var arrowImageView: UIImageView!
     
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var trailingConstraint: NSLayoutConstraint!
@@ -36,7 +35,11 @@ class InputTableViewCell: CustomTableViewCell {
         }
     }
     
-    var pickerView = UIPickerView()
+    private lazy var pickerView = UIPickerView()
+    private lazy var textFieldControllerFloating: MDCTextInputControllerFilled = {
+        let textFieldControllerFloating = MDCTextInputControllerFilled(textInput: textField) // Hold on as a property
+        return textFieldControllerFloating
+    }()
     
     var onFinishSelecting: ((PickerItem) -> Void)?
     var onEdit: ((String?) -> Void)?
@@ -45,7 +48,7 @@ class InputTableViewCell: CustomTableViewCell {
     var onReturn: (() -> Bool)? = nil
     var validate: ((String) -> Bool)? = nil
     
-    var errorMessage = "Campo Inválido."
+    var errorMessage = "Invalid input"
     
     var isSecureTextEntry: Bool? {
         didSet {
@@ -104,37 +107,47 @@ class InputTableViewCell: CustomTableViewCell {
         textField.autocorrectionType = .no
         textField.font = UIFont.avenirRoman16
         textField.textColor = .black
-        textField.selectedTitleColor = .te_black
-        textField.selectedLineColor = .te_black
-        textField.lineHeight = 2.0
-        textField.selectedLineHeight = 2.0
-        textField.titleFormatter = { [unowned self] (text: String) in
-            guard self.hasCustomFormat else { return text }
-            return text
-        }
+        textField.tintColor = .te_black
+        
         textField.addDoneButton { [weak self] in let _ = self?.onReturn?() }
         textField.adjustsFontSizeToFitWidth = true
         textField.addTarget(self, action: #selector(InputTableViewCell.textFieldDidChange(_:)), for: .editingChanged)
+        
+        textFieldControllerFloating.errorColor = .te_pred
+        textFieldControllerFloating.activeColor = .te_green
+        textFieldControllerFloating.normalColor = .te_black
+        textFieldControllerFloating.isFloatingEnabled = true
+        textFieldControllerFloating.underlineViewMode = .always
     }
     
     private func setupPicker(){
-        
         pickerView.delegate = self
         pickerView.dataSource = self
         
-        arrowImageView.image = R.image.arrowDown()?
-            .withRenderingMode(.alwaysTemplate)
-            .tinted(with: .te_wine)
+        textField.rightViewMode = .always
         
-        arrowImageView.isHidden = false
-        arrowImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(InputTableViewCell.pickerView(_:didSelectRow:inComponent:))))
+        let container = UIView(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
+        let image = R.image.dropDown()?
+            .withRenderingMode(.alwaysTemplate)
+            .tinted(with: .te_black)
+        
+        let button = UIButton()
+        button.setBackgroundImage(image, for: .normal)
+        button.setBackgroundImage(image, for: .selected)
+        button.setBackgroundImage(image, for: .highlighted)
+        button.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+        button.isSelected = true
+        button.addTarget(self, action: #selector(InputTableViewCell.pickerView(_:didSelectRow:inComponent:)), for: .touchUpInside)
+        container.addSubview(button)
+        textField.rightView = container
+        
         pickerView.reloadAllComponents()
         textField.inputView = pickerView
     }
     
     private func setupPasswordVisibility() {
         textField.rightViewMode = .always
-        let view = UIView(frame: CGRect(x: Metrics.applePadding, y: Metrics.applePadding, width: 44, height: 44))
+        let container = UIView(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
         
         let button = UIButton()
         let unchecked = R.image.visibilityOff()!
@@ -149,14 +162,14 @@ class InputTableViewCell: CustomTableViewCell {
         button.setBackgroundImage(checked, for: .selected)
         button.setBackgroundImage(checked, for: .highlighted)
         button.addTarget(self, action: #selector(performVisibleButtonOnTap), for: .touchUpInside)
-        button.frame = CGRect(x: Metrics.applePadding, y: Metrics.applePadding, width: 30, height: 30)
+        button.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
         button.isSelected = true 
         
-        view.addSubview(button)
+        container.addSubview(button)
         
         visibilityButton = button
         
-        textField.rightView = view
+        textField.rightView = container
     }
     
     @objc func performVisibleButtonOnTap() {
@@ -165,16 +178,16 @@ class InputTableViewCell: CustomTableViewCell {
     }
     
     // This will notify us when something has changed on the textfield
-    @objc func textFieldDidChange(_ floatingLabelTextField: SkyFloatingLabelTextField) {
+    @objc func textFieldDidChange(_ floatingLabelTextField: MDCTextField) {
         guard let validate = validate else { return }
         guard let text = floatingLabelTextField.text else { return }
         
         if !validate(text) {
-            floatingLabelTextField.errorMessage = errorMessage
+            textFieldControllerFloating.setErrorText(errorMessage, errorAccessibilityValue: nil)
         }
         else {
             // The error message will only disappear when we reset it to nil or empty string
-            floatingLabelTextField.errorMessage = ""
+            textFieldControllerFloating.setErrorText(nil, errorAccessibilityValue: nil)
         }
     }
     
@@ -193,7 +206,7 @@ class InputTableViewCell: CustomTableViewCell {
         onReturn = nil
         validate = nil
         
-        arrowImageView.isHidden = true
+//        arrowImageView.isHidden = true
         
         textField.rightView = nil
         textField.rightViewMode = .never
@@ -292,7 +305,7 @@ extension InputTableViewCell: TableViewProtocol {
 extension InputTableViewCell {
     //MARK: Helpers
     
-    func configure(_ callback: (SkyFloatingLabelTextField) -> Void) {
+    func configure(_ callback: (MDCTextField) -> Void) {
         callback(textField)
     }
     

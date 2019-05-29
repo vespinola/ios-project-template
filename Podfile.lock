@@ -1,7 +1,70 @@
 PODS:
   - Alamofire (5.0.0-beta.6)
-  - Hero (1.4.0)
   - MarqueeLabel (4.0.0)
+  - MaterialComponents/ActivityIndicator (84.4.0):
+    - MaterialComponents/Palettes
+    - MaterialComponents/private/Application
+    - MDFInternationalization
+    - MotionAnimator (~> 2.0)
+  - MaterialComponents/AnimationTiming (84.4.0)
+  - MaterialComponents/Buttons (84.4.0):
+    - MaterialComponents/Ink
+    - MaterialComponents/private/Math
+    - MaterialComponents/Ripple
+    - MaterialComponents/ShadowElevations
+    - MaterialComponents/ShadowLayer
+    - MaterialComponents/Shapes
+    - MaterialComponents/Typography
+    - MDFInternationalization
+    - MDFTextAccessibility
+  - MaterialComponents/Dialogs (84.4.0):
+    - MaterialComponents/Buttons
+    - MaterialComponents/private/KeyboardWatcher
+    - MaterialComponents/ShadowElevations
+    - MaterialComponents/ShadowLayer
+    - MaterialComponents/Typography
+    - MDFInternationalization
+  - MaterialComponents/Ink (84.4.0):
+    - MaterialComponents/private/Math
+  - MaterialComponents/OverlayWindow (84.4.0):
+    - MaterialComponents/private/Application
+  - MaterialComponents/Palettes (84.4.0)
+  - MaterialComponents/private/Application (84.4.0)
+  - MaterialComponents/private/KeyboardWatcher (84.4.0):
+    - MaterialComponents/private/Application
+  - MaterialComponents/private/Math (84.4.0)
+  - MaterialComponents/private/Overlay (84.4.0)
+  - MaterialComponents/Ripple (84.4.0):
+    - MaterialComponents/AnimationTiming
+    - MaterialComponents/private/Math
+  - MaterialComponents/ShadowElevations (84.4.0)
+  - MaterialComponents/ShadowLayer (84.4.0):
+    - MaterialComponents/ShadowElevations
+  - MaterialComponents/Shapes (84.4.0):
+    - MaterialComponents/private/Math
+    - MaterialComponents/ShadowLayer
+  - MaterialComponents/Snackbar (84.4.0):
+    - MaterialComponents/AnimationTiming
+    - MaterialComponents/Buttons
+    - MaterialComponents/OverlayWindow
+    - MaterialComponents/private/Application
+    - MaterialComponents/private/KeyboardWatcher
+    - MaterialComponents/private/Overlay
+    - MaterialComponents/Typography
+  - MaterialComponents/TextFields (84.4.0):
+    - MaterialComponents/AnimationTiming
+    - MaterialComponents/Palettes
+    - MaterialComponents/private/Math
+    - MaterialComponents/Typography
+    - MDFInternationalization
+  - MaterialComponents/Typography (84.4.0):
+    - MaterialComponents/private/Application
+    - MaterialComponents/private/Math
+  - MDFInternationalization (2.0.0)
+  - MDFTextAccessibility (2.0.0)
+  - MotionAnimator (2.8.1):
+    - MotionInterchange (~> 1.6)
+  - MotionInterchange (1.6.0)
   - NotificationBannerSwift (2.2.0):
     - MarqueeLabel (~> 4.0.0)
     - SnapKit (~> 5.0.0)
@@ -9,53 +72,57 @@ PODS:
     - R.swift.Library (~> 5.0.0)
   - R.swift.Library (5.0.1)
   - ReachabilitySwift (4.3.1)
-  - SkyFloatingLabelTextField (3.7.0)
   - SnapKit (5.0.0)
   - Sniffer (2.0.0)
   - TPKeyboardAvoiding (1.3.2)
-  - TTGSnackbar (1.7.5)
 
 DEPENDENCIES:
   - Alamofire (= 5.0.0-beta.6)
-  - Hero (~> 1.4)
+  - MaterialComponents/ActivityIndicator
+  - MaterialComponents/Buttons
+  - MaterialComponents/Dialogs
+  - MaterialComponents/Snackbar
+  - MaterialComponents/TextFields
   - NotificationBannerSwift
   - R.swift
   - ReachabilitySwift (~> 4.3)
-  - SkyFloatingLabelTextField (~> 3.7)
   - SnapKit (~> 5.0)
   - Sniffer (~> 2.0)
   - TPKeyboardAvoiding (~> 1.3)
-  - TTGSnackbar (~> 1.7)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
-    - Hero
     - MarqueeLabel
+    - MaterialComponents
+    - MDFInternationalization
+    - MDFTextAccessibility
+    - MotionAnimator
+    - MotionInterchange
     - NotificationBannerSwift
     - R.swift
     - R.swift.Library
     - ReachabilitySwift
-    - SkyFloatingLabelTextField
     - SnapKit
     - Sniffer
     - TPKeyboardAvoiding
-    - TTGSnackbar
 
 SPEC CHECKSUMS:
   Alamofire: cd08a4402bd12cacd0c66f23fb12fec8d6b965e4
-  Hero: bac92350d7201a1a940003e0767c7b52ce7c99a1
   MarqueeLabel: b55b26e690b6ad41faedd95cbf5eae6f1d1735b4
+  MaterialComponents: e31f67324695bb1b537e5eccaee62db07ac3d06b
+  MDFInternationalization: 010097556d6b09d2c4ea38e0820ea6d37be6a314
+  MDFTextAccessibility: 85c09a1bd9c321f494348e632a25063bcda35a53
+  MotionAnimator: ee16aa30567c5bae0fb2750c132915829cfaaf8a
+  MotionInterchange: ead0e3ae1f3a5fb539e289debbc7ae036160a10d
   NotificationBannerSwift: 0ebb4b35e18c0515fdfe01b5ebd90c3eb1255e3d
   R.swift: f5a87643b91ea569d23d6afb3eee9c743edde239
   R.swift.Library: cfe85d569d9bae6cb262922db130e7c3a7a5fad1
   ReachabilitySwift: 4032e2f59586e11e3b0ebe15b167abdd587a388b
-  SkyFloatingLabelTextField: 4b46db0ab1ccde0919cded29c656e6b4805eda04
   SnapKit: fd22d10eb9aff484d79a8724eab922c1ddf89bcf
   Sniffer: 8818aff78371938472e70121eff907f5b0928049
   TPKeyboardAvoiding: cb69d5ddbe90ce0170e4bc2db1e5e41d4a3ad9a4
-  TTGSnackbar: 2cf4e7b6ffbe5cddf248a73f3ee952b71bee8ea3
 
-PODFILE CHECKSUM: 1c64157dfe6295f5b930475e7cf64b6fee48055c
+PODFILE CHECKSUM: 744537e8afdecf627175a956d5cbd4bfdce2b119
 
-COCOAPODS: 1.6.1
+COCOAPODS: 1.5.2
