@@ -45,7 +45,7 @@ class ExampleViewController: BaseViewController {
 
     private func configure() {
         tableView.separatorStyle = .none
-        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 40, right: 0)
+        tableView.contentInset = UIEdgeInsets(top: -UIApplication.shared.statusBarFrame.height, left: 0, bottom: 40, right: 0)
         
         LabelTableViewCell.register(in: tableView)
         ButtonTableViewCell.register(in: tableView)
@@ -111,15 +111,8 @@ class ExampleViewController: BaseViewController {
                 }),
                 Field(for: { indexPath in
                     let cell = SwitchTableViewCell.instante(from: tableView, at: indexPath)
-                    cell.configure(text: "Option 1 is \(cell.optionSwitch.isOn ? "enabled" : "disabled")", onChange: { isOn in
-                        cell.label.text = "Option 1 is \(cell.optionSwitch.isOn ? "enabled" : "disabled")"
-                    })
-                    return cell
-                }),
-                Field(for: { indexPath in
-                    let cell = SwitchTableViewCell.instante(from: tableView, at: indexPath)
-                    cell.configure(text: "Option 2 is \(cell.optionSwitch.isOn ? "enabled" : "disabled")", onChange: { isOn in
-                        cell.label.text = "Option 2 is \(cell.optionSwitch.isOn ? "enabled" : "disabled")"
+                    cell.configure(text: "Option is \(cell.optionSwitch.isOn ? "enabled" : "disabled")", onChange: { isOn in
+                        cell.label.text = "Option is \(cell.optionSwitch.isOn ? "enabled" : "disabled")"
                     })
                     return cell
                 }),

@@ -13,6 +13,10 @@ class BaseViewController: UIViewController {
     
     private var activityIndicator: MDCActivityIndicator!
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,6 +28,11 @@ class BaseViewController: UIViewController {
         view.addSubview(activityIndicator)
         
         activityIndicator.snp.makeConstraints { $0.edges.equalToSuperview() }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        setNeedsStatusBarAppearanceUpdate()
     }
     
     func showActivityIndicator() {
