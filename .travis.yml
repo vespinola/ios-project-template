@@ -13,4 +13,5 @@ script:
 - pod lib lint
 
 before-update:
+- sudo gem install cocoapods
 - pod install --repo-upate
