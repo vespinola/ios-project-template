@@ -6,6 +6,21 @@ PODS:
     - MDFInternationalization
     - MotionAnimator (~> 2.0)
   - MaterialComponents/AnimationTiming (84.4.0)
+  - MaterialComponents/AppBar (84.4.0):
+    - MaterialComponents/FlexibleHeader
+    - MaterialComponents/HeaderStackView
+    - MaterialComponents/NavigationBar
+    - MaterialComponents/private/Application
+    - MaterialComponents/private/Icons/ic_arrow_back
+    - MaterialComponents/private/UIMetrics
+    - MaterialComponents/ShadowElevations
+    - MaterialComponents/ShadowLayer
+    - MaterialComponents/Typography
+    - MDFInternationalization
+  - MaterialComponents/ButtonBar (84.4.0):
+    - MaterialComponents/Buttons
+    - MaterialComponents/private/Application
+    - MDFInternationalization
   - MaterialComponents/Buttons (84.4.0):
     - MaterialComponents/Ink
     - MaterialComponents/private/Math
@@ -23,16 +38,32 @@ PODS:
     - MaterialComponents/ShadowLayer
     - MaterialComponents/Typography
     - MDFInternationalization
+  - MaterialComponents/FlexibleHeader (84.4.0):
+    - MaterialComponents/private/Application
+    - MaterialComponents/private/UIMetrics
+    - MDFTextAccessibility
+  - MaterialComponents/HeaderStackView (84.4.0)
   - MaterialComponents/Ink (84.4.0):
     - MaterialComponents/private/Math
+  - MaterialComponents/NavigationBar (84.4.0):
+    - MaterialComponents/ButtonBar
+    - MaterialComponents/private/Math
+    - MaterialComponents/Typography
+    - MDFInternationalization
+    - MDFTextAccessibility
   - MaterialComponents/OverlayWindow (84.4.0):
     - MaterialComponents/private/Application
   - MaterialComponents/Palettes (84.4.0)
   - MaterialComponents/private/Application (84.4.0)
+  - MaterialComponents/private/Icons/Base (84.4.0)
+  - MaterialComponents/private/Icons/ic_arrow_back (84.4.0):
+    - MaterialComponents/private/Icons/Base
   - MaterialComponents/private/KeyboardWatcher (84.4.0):
     - MaterialComponents/private/Application
   - MaterialComponents/private/Math (84.4.0)
   - MaterialComponents/private/Overlay (84.4.0)
+  - MaterialComponents/private/UIMetrics (84.4.0):
+    - MaterialComponents/private/Application
   - MaterialComponents/Ripple (84.4.0):
     - MaterialComponents/AnimationTiming
     - MaterialComponents/private/Math
@@ -75,8 +106,10 @@ PODS:
 DEPENDENCIES:
   - Alamofire (= 5.0.0-beta.6)
   - MaterialComponents/ActivityIndicator
+  - MaterialComponents/AppBar
   - MaterialComponents/Buttons
   - MaterialComponents/Dialogs
+  - MaterialComponents/FlexibleHeader
   - MaterialComponents/Snackbar
   - MaterialComponents/TextFields
   - R.swift
@@ -114,6 +147,6 @@ SPEC CHECKSUMS:
   Sniffer: 8818aff78371938472e70121eff907f5b0928049
   TPKeyboardAvoiding: cb69d5ddbe90ce0170e4bc2db1e5e41d4a3ad9a4
 
-PODFILE CHECKSUM: ff60882cd2ae86ec56b946fe6f0d17381c3bc7d3
+PODFILE CHECKSUM: 7f27584fca99280569efe58585cd089ed859e064
 
 COCOAPODS: 1.5.2

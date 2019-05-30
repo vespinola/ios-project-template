@@ -7,17 +7,36 @@
 //
 
 import UIKit
+import MaterialComponents.MDCAppBar
 
 class ExampleViewController: BaseViewController {
     @IBOutlet weak var tableView: FormTableView!
+    
     private let presenter = ExamplePresenter()
+    private lazy var appBar = MDCAppBar()
+    private lazy var welcomeHeaderView: WelcomeHeaderView = {
+        let header = WelcomeHeaderView()
+        header.titleLabel.text = "FORM EXAMPLE"
+        return header
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configure()
         create()
+        configureAppBar()
         presenter.attach(view: self)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
     deinit {
@@ -25,7 +44,6 @@ class ExampleViewController: BaseViewController {
     }
 
     private func configure() {
-        title = "Example"
         tableView.separatorStyle = .none
         
         LabelTableViewCell.register(in: tableView)
@@ -155,6 +173,48 @@ class ExampleViewController: BaseViewController {
     }
 }
 
+// MARK: MDCFlexibleHeaderViewLayoutDelegate
+extension ExampleViewController: MDCFlexibleHeaderViewLayoutDelegate {
+    
+    public func flexibleHeaderViewController(_ flexibleHeaderViewController: MDCFlexibleHeaderViewController,
+                                             flexibleHeaderViewFrameDidChange flexibleHeaderView: MDCFlexibleHeaderView) {
+        
+        welcomeHeaderView.update(withScrollPhasePercentage: flexibleHeaderView.scrollPhasePercentage)
+    }
+}
+
+extension ExampleViewController: UIScrollViewDelegate {
+    // MARK: UIScrollViewDelegate
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let headerView = appBar.headerViewController.headerView
+        if scrollView == headerView.trackingScrollView {
+            headerView.trackingScrollDidScroll()
+        }
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let headerView = appBar.headerViewController.headerView
+        if scrollView == headerView.trackingScrollView {
+            headerView.trackingScrollDidEndDecelerating()
+        }
+    }
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        let headerView = appBar.headerViewController.headerView
+        if scrollView == headerView.trackingScrollView {
+            headerView.trackingScrollDidEndDraggingWillDecelerate(decelerate)
+        }
+    }
+    
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        let headerView = appBar.headerViewController.headerView
+        if scrollView == headerView.trackingScrollView {
+            headerView.trackingScrollWillEndDragging(withVelocity: velocity, targetContentOffset: targetContentOffset)
+        }
+    }
+}
+
+
 extension ExampleViewController: ExampleView {
     func performAfterCall() {
         Utilities.showSnackbar(with: "Everything was done!")
@@ -176,6 +236,30 @@ extension ExampleViewController: ExampleView {
 extension ExampleViewController: RadioButtonTableViewCellDelegate {
     func didToggleRadioButton(_ indexPath: IndexPath) {
         //TODO
+    }
+}
+
+// MARK: UI Configuration
+extension ExampleViewController {
+    func configureAppBar() {
+        self.addChild(appBar.headerViewController)
+        
+        appBar.navigationBar.backgroundColor = .clear
+        appBar.headerViewController.layoutDelegate = self
+        appBar.navigationBar.title = nil
+        
+        let headerView = appBar.headerViewController.headerView
+        headerView.backgroundColor = .clear
+        headerView.maximumHeight = WelcomeHeaderView.Constants.maxHeight
+        headerView.minimumHeight = WelcomeHeaderView.Constants.minHeight
+        
+        welcomeHeaderView.frame = headerView.bounds
+        headerView.insertSubview(welcomeHeaderView, at: 0)
+        
+        headerView.trackingScrollView = tableView
+        headerView.trackingScrollView?.delegate = self
+        
+        appBar.addSubviewsToParent()
     }
 }
 

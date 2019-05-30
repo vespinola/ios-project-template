@@ -17,5 +17,7 @@ target 'template-ios' do
   pod 'MaterialComponents/Snackbar'
   pod 'MaterialComponents/ActivityIndicator'
   pod 'MaterialComponents/Dialogs'
-
+  pod 'MaterialComponents/FlexibleHeader'
+  pod 'MaterialComponents/AppBar'
+  
 end
