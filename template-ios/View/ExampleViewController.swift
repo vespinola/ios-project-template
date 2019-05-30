@@ -45,6 +45,7 @@ class ExampleViewController: BaseViewController {
 
     private func configure() {
         tableView.separatorStyle = .none
+        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 40, right: 0)
         
         LabelTableViewCell.register(in: tableView)
         ButtonTableViewCell.register(in: tableView)
