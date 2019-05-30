@@ -1,0 +1,11 @@
+language: objective-c
+osx_image: xcode10.2
+
+env:
+  - ACTION=test  PLATFORM=iOS     DESTINATION='platform=iOS Simulator,name=iPhone 6S'
+
+script:
+  - set -o pipefail && xcodebuild -scheme template-ios -destination "$DESTINATION" $ACTION | xcpretty
+  
+before_install:
+- pod install --repo-update

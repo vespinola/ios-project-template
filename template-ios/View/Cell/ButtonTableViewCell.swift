@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import MaterialComponents.MaterialButtons
 
 class ButtonTableViewCell: CustomTableViewCell {
-    @IBOutlet weak var button: UIButton!
+    @IBOutlet weak var button: MDCButton!
     
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var leadingConstraint: NSLayoutConstraint!
@@ -32,6 +33,8 @@ class ButtonTableViewCell: CustomTableViewCell {
         // Initialization code
         selectionStyle = .none
         button.setupDefaultStyle()
+        button.setElevation(ShadowElevation(rawValue: 6), for: .normal)
+        button.setElevation(ShadowElevation(rawValue: 12), for: .highlighted)
     }
     
     func configure(title: String, onTap: @escaping () -> Void) {
