@@ -1,8 +1,11 @@
 language: objective-c
 osx_image: xcode10.2
-xcode_workspace: template-ios.xcworkspace
-xcode_scheme: template-ios
-xcode_destination: platform=iOS Simulator,OS=11.0,name=iPhone 6s
+
+env:
+  - ACTION=test  PLATFORM=iOS     DESTINATION='platform=iOS Simulator,name=iPhone 6S'
+
+script:
+  - set -o pipefail && xcodebuild -scheme template-ios -destination "$DESTINATION" $ACTION | xcpretty
+  
 before_install:
-- sudo gem install cocoapods
-- pod install --repo-update --verbose
+- pod install --repo-update
