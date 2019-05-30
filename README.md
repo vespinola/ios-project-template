@@ -13,6 +13,7 @@ The repository contains examples of:
 - CI with Travis.
 
 ![alt text](https://github.com/openwindouw/ios-project-template/blob/master/screenshots/screen-1.png)
+![alt text](https://github.com/openwindouw/ios-project-template/blob/master/screenshots/screen-2.png)
 
 ## Requirements
 - Xcode 10.2
