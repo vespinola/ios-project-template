@@ -1,6 +1,5 @@
 PODS:
   - Alamofire (5.0.0-beta.6)
-  - MarqueeLabel (4.0.0)
   - MaterialComponents/ActivityIndicator (84.4.0):
     - MaterialComponents/Palettes
     - MaterialComponents/private/Application
@@ -65,9 +64,6 @@ PODS:
   - MotionAnimator (2.8.1):
     - MotionInterchange (~> 1.6)
   - MotionInterchange (1.6.0)
-  - NotificationBannerSwift (2.2.0):
-    - MarqueeLabel (~> 4.0.0)
-    - SnapKit (~> 5.0.0)
   - R.swift (5.0.3):
     - R.swift.Library (~> 5.0.0)
   - R.swift.Library (5.0.1)
@@ -83,7 +79,6 @@ DEPENDENCIES:
   - MaterialComponents/Dialogs
   - MaterialComponents/Snackbar
   - MaterialComponents/TextFields
-  - NotificationBannerSwift
   - R.swift
   - ReachabilitySwift (~> 4.3)
   - SnapKit (~> 5.0)
@@ -93,13 +88,11 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
-    - MarqueeLabel
     - MaterialComponents
     - MDFInternationalization
     - MDFTextAccessibility
     - MotionAnimator
     - MotionInterchange
-    - NotificationBannerSwift
     - R.swift
     - R.swift.Library
     - ReachabilitySwift
@@ -109,13 +102,11 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: cd08a4402bd12cacd0c66f23fb12fec8d6b965e4
-  MarqueeLabel: b55b26e690b6ad41faedd95cbf5eae6f1d1735b4
   MaterialComponents: e31f67324695bb1b537e5eccaee62db07ac3d06b
   MDFInternationalization: 010097556d6b09d2c4ea38e0820ea6d37be6a314
   MDFTextAccessibility: 85c09a1bd9c321f494348e632a25063bcda35a53
   MotionAnimator: ee16aa30567c5bae0fb2750c132915829cfaaf8a
   MotionInterchange: ead0e3ae1f3a5fb539e289debbc7ae036160a10d
-  NotificationBannerSwift: 0ebb4b35e18c0515fdfe01b5ebd90c3eb1255e3d
   R.swift: f5a87643b91ea569d23d6afb3eee9c743edde239
   R.swift.Library: cfe85d569d9bae6cb262922db130e7c3a7a5fad1
   ReachabilitySwift: 4032e2f59586e11e3b0ebe15b167abdd587a388b
@@ -123,6 +114,6 @@ SPEC CHECKSUMS:
   Sniffer: 8818aff78371938472e70121eff907f5b0928049
   TPKeyboardAvoiding: cb69d5ddbe90ce0170e4bc2db1e5e41d4a3ad9a4
 
-PODFILE CHECKSUM: 744537e8afdecf627175a956d5cbd4bfdce2b119
+PODFILE CHECKSUM: ff60882cd2ae86ec56b946fe6f0d17381c3bc7d3
 
 COCOAPODS: 1.5.2
