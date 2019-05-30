@@ -13,7 +13,7 @@ extension UIButton {
         backgroundColor = .te_black
         setTitleColor(.te_white, for: .normal)
         titleLabel?.font = .avenirHeavy20
-        layer.masksToBounds = true
-        layer.cornerRadius = .leastNormalMagnitude
+//        layer.masksToBounds = true
+//        layer.cornerRadius = .leastNormalMagnitude
     }
 }

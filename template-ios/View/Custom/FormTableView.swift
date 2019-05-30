@@ -72,7 +72,7 @@ class FormTableView: TPKeyboardAvoidingTableView {
     
     func reload(section: Section, animation: RowAnimation = .middle) {
         guard let index = indexFor(section: section) else {
-            fatalError("Section doesn't exists.")
+            fatalError("Section not found")
         }
         
         reloadSections([index], with: animation)
