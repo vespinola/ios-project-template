@@ -18,7 +18,7 @@
 		972EBFFC22416DED005E47A1 /* Routes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972EBFFB22416DED005E47A1 /* Routes.swift */; };
 		972EC00122417202005E47A1 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972EBFFF22417202005E47A1 /* Section.swift */; };
 		972EC00222417202005E47A1 /* TableViewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972EC00022417202005E47A1 /* TableViewProvider.swift */; };
-		972EC00522417279005E47A1 /* CustomTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972EC00422417279005E47A1 /* CustomTableView.swift */; };
+		972EC00522417279005E47A1 /* FormTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972EC00422417279005E47A1 /* FormTableView.swift */; };
 		972EC01422417360005E47A1 /* InputTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 972EC0072241735F005E47A1 /* InputTableViewCell.xib */; };
 		972EC01522417360005E47A1 /* RadioButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972EC0082241735F005E47A1 /* RadioButtonTableViewCell.swift */; };
 		972EC01622417360005E47A1 /* InputTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972EC0092241735F005E47A1 /* InputTableViewCell.swift */; };
@@ -72,7 +72,7 @@
 		972EBFFB22416DED005E47A1 /* Routes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routes.swift; sourceTree = "<group>"; };
 		972EBFFF22417202005E47A1 /* Section.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 		972EC00022417202005E47A1 /* TableViewProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewProvider.swift; sourceTree = "<group>"; };
-		972EC00422417279005E47A1 /* CustomTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableView.swift; sourceTree = "<group>"; };
+		972EC00422417279005E47A1 /* FormTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormTableView.swift; sourceTree = "<group>"; };
 		972EC0072241735F005E47A1 /* InputTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InputTableViewCell.xib; sourceTree = "<group>"; };
 		972EC0082241735F005E47A1 /* RadioButtonTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioButtonTableViewCell.swift; sourceTree = "<group>"; };
 		972EC0092241735F005E47A1 /* InputTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputTableViewCell.swift; sourceTree = "<group>"; };
@@ -213,7 +213,7 @@
 		972EC00322417261005E47A1 /* Custom */ = {
 			isa = PBXGroup;
 			children = (
-				972EC00422417279005E47A1 /* CustomTableView.swift */,
+				972EC00422417279005E47A1 /* FormTableView.swift */,
 				972EC03D22417456005E47A1 /* BarButtonItem.swift */,
 			);
 			path = Custom;
@@ -497,7 +497,7 @@
 				972EC02222417397005E47A1 /* Constants.swift in Sources */,
 				972EC037224173DC005E47A1 /* String+Helpers.swift in Sources */,
 				97FEE193229F29F4009EEA78 /* BaseViewController.swift in Sources */,
-				972EC00522417279005E47A1 /* CustomTableView.swift in Sources */,
+				972EC00522417279005E47A1 /* FormTableView.swift in Sources */,
 				972EC031224173DC005E47A1 /* UIView+Helpers.swift in Sources */,
 				972EBFFC22416DED005E47A1 /* Routes.swift in Sources */,
 				972EC01F22417360005E47A1 /* SwitchTableViewCell.swift in Sources */,

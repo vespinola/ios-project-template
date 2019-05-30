@@ -9,7 +9,7 @@
 import UIKit
 
 class ExampleViewController: BaseViewController {
-    @IBOutlet weak var tableView: CustomTableView!
+    @IBOutlet weak var tableView: FormTableView!
     private let presenter = ExamplePresenter()
     
     override func viewDidLoad() {

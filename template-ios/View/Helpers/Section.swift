@@ -10,7 +10,7 @@ import UIKit
 typealias FormSections = [Section]
 
 class Section {
-    //view header section
+    var index: Int!
     var headerFor: ((Int) -> UIView?)? = nil
     var headerHeight: CGFloat! = .leastNormalMagnitude
     
@@ -38,6 +38,10 @@ class Section {
         handler(self)
         return self
     }
+    
+    func removeAllCells() {
+        cells.removeAll()
+    }
 }
 
 class Field {
@@ -59,6 +63,12 @@ class Field {
     func set(height: CGFloat) -> Self {
         self.height = height
         return self
+    }
+}
+
+extension Section: Equatable {
+    static func == (lhs: Section, rhs: Section) -> Bool {
+        return lhs.index == rhs.index
     }
 }
 
