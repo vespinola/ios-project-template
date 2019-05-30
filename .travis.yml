@@ -14,4 +14,4 @@ script:
 
 before_install:
 - sudo gem install cocoapods
-- pod install --repo-upate
+- pod install --repo-update
