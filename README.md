@@ -23,8 +23,6 @@ The repository contains examples of:
 - Run **pod install**
 - Open **template-ios.xcworkspace**
 
-## Todo
-- UI Testing
 
 ## Author
 
